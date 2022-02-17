@@ -4,8 +4,8 @@ import java.util.concurrent.RecursiveTask;
 
 public class Factorial {
 
-	static int NUM_EVAL_RUNS = 100000;
-	static int FACTORIAL = 20; // MAX 20
+	private static int NUM_EVAL_RUNS = 100000;
+	private static int FACTORIAL = 20; // MAX 20
 
 	public static void main(String[] args) {
 
@@ -76,8 +76,10 @@ class ParallelFactorial {
 	}
 
 	private class RecursiveFactorialComputation extends RecursiveTask<Long> {
-
-		int lo, hi;
+		
+		private static final long serialVersionUID = 1L;
+		
+		private int lo, hi;
 
 		public RecursiveFactorialComputation(int lo, int hi) {
 			this.lo = lo;
